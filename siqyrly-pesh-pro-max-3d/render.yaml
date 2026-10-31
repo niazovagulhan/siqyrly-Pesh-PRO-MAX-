@@ -1,0 +1,15 @@
+# GitHub репозиторийін Render Blueprint арқылы жариялау
+# Free нұсқасы — сынауға арналған: сервер қайта іске қосылғанда оқушы нәтижелері жойылуы мүмкін.
+services:
+  - type: web
+    name: siqyrly-pesh-pro-max-3d
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/meta
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TEACHER_PASSWORD
+        sync: false
